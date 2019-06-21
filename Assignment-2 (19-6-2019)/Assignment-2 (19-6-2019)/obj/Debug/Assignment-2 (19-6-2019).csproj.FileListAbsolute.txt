@@ -1,0 +1,29 @@
+D:\.Net Training\Assignment-2 (19-6-2019)\Assignment-2 (19-6-2019)\bin\Assignment-2 (19-6-2019).dll
+D:\.Net Training\Assignment-2 (19-6-2019)\Assignment-2 (19-6-2019)\bin\Assignment-2 (19-6-2019).pdb
+D:\.Net Training\Assignment-2 (19-6-2019)\Assignment-2 (19-6-2019)\bin\Antlr3.Runtime.dll
+D:\.Net Training\Assignment-2 (19-6-2019)\Assignment-2 (19-6-2019)\bin\AspNet.ScriptManager.jQuery.dll
+D:\.Net Training\Assignment-2 (19-6-2019)\Assignment-2 (19-6-2019)\bin\AspNet.ScriptManager.jQuery.UI.Combined.dll
+D:\.Net Training\Assignment-2 (19-6-2019)\Assignment-2 (19-6-2019)\bin\DotNetOpenAuth.AspNet.dll
+D:\.Net Training\Assignment-2 (19-6-2019)\Assignment-2 (19-6-2019)\bin\DotNetOpenAuth.Core.dll
+D:\.Net Training\Assignment-2 (19-6-2019)\Assignment-2 (19-6-2019)\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\.Net Training\Assignment-2 (19-6-2019)\Assignment-2 (19-6-2019)\bin\DotNetOpenAuth.OAuth.dll
+D:\.Net Training\Assignment-2 (19-6-2019)\Assignment-2 (19-6-2019)\bin\DotNetOpenAuth.OpenId.dll
+D:\.Net Training\Assignment-2 (19-6-2019)\Assignment-2 (19-6-2019)\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\.Net Training\Assignment-2 (19-6-2019)\Assignment-2 (19-6-2019)\bin\EntityFramework.dll
+D:\.Net Training\Assignment-2 (19-6-2019)\Assignment-2 (19-6-2019)\bin\Microsoft.AspNet.Membership.OpenAuth.dll
+D:\.Net Training\Assignment-2 (19-6-2019)\Assignment-2 (19-6-2019)\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+D:\.Net Training\Assignment-2 (19-6-2019)\Assignment-2 (19-6-2019)\bin\Microsoft.ScriptManager.MSAjax.dll
+D:\.Net Training\Assignment-2 (19-6-2019)\Assignment-2 (19-6-2019)\bin\Microsoft.ScriptManager.WebForms.dll
+D:\.Net Training\Assignment-2 (19-6-2019)\Assignment-2 (19-6-2019)\bin\Microsoft.Web.Infrastructure.dll
+D:\.Net Training\Assignment-2 (19-6-2019)\Assignment-2 (19-6-2019)\bin\System.Web.Optimization.dll
+D:\.Net Training\Assignment-2 (19-6-2019)\Assignment-2 (19-6-2019)\bin\System.Web.Providers.dll
+D:\.Net Training\Assignment-2 (19-6-2019)\Assignment-2 (19-6-2019)\bin\WebGrease.dll
+D:\.Net Training\Assignment-2 (19-6-2019)\Assignment-2 (19-6-2019)\bin\EntityFramework.xml
+D:\.Net Training\Assignment-2 (19-6-2019)\Assignment-2 (19-6-2019)\bin\DotNetOpenAuth.Core.xml
+D:\.Net Training\Assignment-2 (19-6-2019)\Assignment-2 (19-6-2019)\bin\DotNetOpenAuth.OAuth.xml
+D:\.Net Training\Assignment-2 (19-6-2019)\Assignment-2 (19-6-2019)\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\.Net Training\Assignment-2 (19-6-2019)\Assignment-2 (19-6-2019)\bin\DotNetOpenAuth.OpenId.xml
+D:\.Net Training\Assignment-2 (19-6-2019)\Assignment-2 (19-6-2019)\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\.Net Training\Assignment-2 (19-6-2019)\Assignment-2 (19-6-2019)\bin\DotNetOpenAuth.AspNet.xml
+D:\.Net Training\Assignment-2 (19-6-2019)\Assignment-2 (19-6-2019)\obj\Debug\Assignment-2 (19-6-2019).dll
+D:\.Net Training\Assignment-2 (19-6-2019)\Assignment-2 (19-6-2019)\obj\Debug\Assignment-2 (19-6-2019).pdb

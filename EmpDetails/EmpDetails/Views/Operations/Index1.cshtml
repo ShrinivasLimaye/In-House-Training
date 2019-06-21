@@ -1,0 +1,67 @@
+﻿@model IEnumerable<EmpDetails.Models.Customers_Search_Result>
+
+@{
+    ViewBag.Title = "Index";
+}
+<head>
+<style>
+table {
+  border-collapse: collapse;
+}
+
+table, td, th {
+  border: 2px solid black;
+  
+}
+    th {
+        color: red;
+    }
+</style>
+</head>
+<h2>Index</h2>
+
+<table style="width:100%">
+            <tr>
+                <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contact)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Age)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        
+            </tr>
+           @foreach (var item in Model) {
+        <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Contact)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Age)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+       
+            </tr>
+     }
+        </table>
+    
+
+
+@Html.ActionLink("Back", "Index","Employee")

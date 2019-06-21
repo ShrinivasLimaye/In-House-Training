@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EmployeeModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="EmployeeModelStoreContainer">
+    <EntitySet Name="Dept" EntityType="EmployeeModel.Store.Dept" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Employee" EntityType="EmployeeModel.Store.Employee" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EmpRoles" EntityType="EmployeeModel.Store.EmpRoles" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Employee_Dept" Association="EmployeeModel.Store.FK_Employee_Dept">
+      <End Role="Dept" EntitySet="Dept" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employee_EmpRoles" Association="EmployeeModel.Store.FK_Employee_EmpRoles">
+      <End Role="EmpRoles" EntitySet="EmpRoles" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Dept">
+    <Key>
+      <PropertyRef Name="Dept.ID" />
+    </Key>
+    <Property Name="Dept.ID" Type="int" Nullable="false" />
+    <Property Name="Department Name" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Address" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Contact" Type="int" Nullable="false" />
+    <Property Name="Age" Type="int" Nullable="false" />
+    <Property Name="Email" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Dept.ID" Type="int" Nullable="false" />
+    <Property Name="Username" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Password" Type="nchar" Nullable="false" MaxLength="10" />
+    <Property Name="Role.ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EmpRoles">
+    <Key>
+      <PropertyRef Name="Role.ID" />
+    </Key>
+    <Property Name="Role.ID" Type="int" Nullable="false" />
+    <Property Name="Role.Name" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Salary" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Employee_Dept">
+    <End Role="Dept" Type="EmployeeModel.Store.Dept" Multiplicity="1" />
+    <End Role="Employee" Type="EmployeeModel.Store.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dept">
+        <PropertyRef Name="Dept.ID" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="Dept.ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employee_EmpRoles">
+    <End Role="EmpRoles" Type="EmployeeModel.Store.EmpRoles" Multiplicity="1" />
+    <End Role="Employee" Type="EmployeeModel.Store.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EmpRoles">
+        <PropertyRef Name="Role.ID" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="Role.ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="Customers_Search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Name" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Sal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Name" Type="nvarchar" Mode="In" />
+  </Function>
+</Schema>

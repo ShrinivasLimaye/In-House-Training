@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EmployeeModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="EmployeeEntities1" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Depts" EntityType="EmployeeModel.Dept" />
+    <EntitySet Name="Employees" EntityType="EmployeeModel.Employee" />
+    <EntitySet Name="EmpRoles" EntityType="EmployeeModel.EmpRole" />
+    <AssociationSet Name="FK_Employee_Dept" Association="EmployeeModel.FK_Employee_Dept">
+      <End Role="Dept" EntitySet="Depts" />
+      <End Role="Employee" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employee_EmpRoles" Association="EmployeeModel.FK_Employee_EmpRoles">
+      <End Role="EmpRoles" EntitySet="EmpRoles" />
+      <End Role="Employee" EntitySet="Employees" />
+    </AssociationSet>
+    <FunctionImport Name="Customers_Search" ReturnType="Collection(EmployeeModel.Customers_Search_Result)">
+      <Parameter Name="Name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Sal" ReturnType="Collection(EmployeeModel.Sal_Result)">
+      <Parameter Name="Name" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="Dept">
+    <Key>
+      <PropertyRef Name="Dept_ID" />
+    </Key>
+    <Property Name="Dept_ID" Type="Int32" Nullable="false" />
+    <Property Name="Department_Name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Employees" Relationship="EmployeeModel.FK_Employee_Dept" FromRole="Dept" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Address" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Contact" Type="Int32" Nullable="false" />
+    <Property Name="Age" Type="Int32" Nullable="false" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Dept_ID" Type="Int32" Nullable="false" />
+    <Property Name="Username" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="Role_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Dept" Relationship="EmployeeModel.FK_Employee_Dept" FromRole="Employee" ToRole="Dept" />
+    <NavigationProperty Name="EmpRole" Relationship="EmployeeModel.FK_Employee_EmpRoles" FromRole="Employee" ToRole="EmpRoles" />
+  </EntityType>
+  <EntityType Name="EmpRole">
+    <Key>
+      <PropertyRef Name="Role_ID" />
+    </Key>
+    <Property Name="Role_ID" Type="Int32" Nullable="false" />
+    <Property Name="Role_Name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Salary" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Employees" Relationship="EmployeeModel.FK_Employee_EmpRoles" FromRole="EmpRoles" ToRole="Employee" />
+  </EntityType>
+  <Association Name="FK_Employee_Dept">
+    <End Role="Dept" Type="EmployeeModel.Dept" Multiplicity="1" />
+    <End Role="Employee" Type="EmployeeModel.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dept">
+        <PropertyRef Name="Dept_ID" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="Dept_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employee_EmpRoles">
+    <End Role="EmpRoles" Type="EmployeeModel.EmpRole" Multiplicity="1" />
+    <End Role="Employee" Type="EmployeeModel.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EmpRoles">
+        <PropertyRef Name="Role_ID" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="Role_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="Customers_Search_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Address" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="Contact" Nullable="false" />
+    <Property Type="Int32" Name="Age" Nullable="false" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="Dept_ID" Nullable="false" />
+    <Property Type="String" Name="Username" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Password" Nullable="false" MaxLength="10" />
+    <Property Type="Int32" Name="Role_ID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="Sal_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Address" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="Contact" Nullable="false" />
+    <Property Type="Int32" Name="Age" Nullable="false" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="Dept_ID" Nullable="false" />
+    <Property Type="String" Name="Username" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Password" Nullable="false" MaxLength="10" />
+    <Property Type="Int32" Name="Role_ID" Nullable="false" />
+  </ComplexType>
+</Schema>
