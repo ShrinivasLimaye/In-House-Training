@@ -15,6 +15,12 @@ namespace Assignment_2__19_6_2019_
             {
                 Response.Redirect("Home.aspx");
             }
+            if (Session["nu"] != null)
+            {
+                string str = Convert.ToString(Session["nu"]);
+                string u = str;
+                Label1.Text ="Hello,"+ u;
+            }
         }
     }
 }

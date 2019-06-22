@@ -22,9 +22,12 @@
         <asp:Label ID="Label1" runat="server" style="z-index: 1; left: 60px; top: 119px; position: absolute; width: 74px;" Text="Username"></asp:Label>
         <asp:Label ID="Label2" runat="server" style="z-index: 1; left: 60px; top: 189px; position: absolute; width: 78px" Text="Password"></asp:Label>
         <p>
-            <asp:Label ID="Label3" runat="server" style="z-index: 1; left: 430px; top: 180px; position: absolute; width: 102px"></asp:Label>
+            <asp:Label ID="Label3" runat="server" style="z-index: 1; left: 156px; top: 293px; position: absolute; width: 102px"></asp:Label>
         </p>
         <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" style="z-index: 1; left: 288px; top: 233px; position: absolute; width: 66px; height: 28px" Text="Register" />
+        <p>
+            <asp:Label ID="Label5" runat="server" style="z-index: 1; top: 290px; position: absolute; width: 95px; left: 306px; height: 22px"></asp:Label>
+        </p>
     </form>
 </body>
 </html>

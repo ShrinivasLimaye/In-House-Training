@@ -13,11 +13,19 @@ namespace Assignment_2__19_6_2019_
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-          
+            if (Session["nu"] != null)
+            {
+                string[] str = Convert.ToString(Session["nu"]).Split(',');
+                string u = str[0];
+                string p = str[1];
+                TextBox6.Text = u;
+                TextBox7.Text = p;
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+
             string name = TextBox1.Text;
             string address = TextBox2.Text;
             int cont = int.Parse(TextBox3.Text);
@@ -41,11 +49,11 @@ namespace Assignment_2__19_6_2019_
                 cmd.ExecuteNonQuery();
                 Label6.Visible = true;
                 Label6.Text = "Registration Successful";
-                
-           
-                con.Close();
-                Response.Redirect("Home.aspx");
 
+                con.Close();
+
+                Response.AppendHeader("Refresh", "5;url=Home.aspx");
+                Label7.Text = "You will now be redirected to login page....";
             }
         }
     }

@@ -33,5 +33,11 @@ namespace Assignment_2__19_6_2019_
 
         }
 
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Session["log"] = null;
+            Response.Redirect("Home.aspx");
+        }
+
     }
 }

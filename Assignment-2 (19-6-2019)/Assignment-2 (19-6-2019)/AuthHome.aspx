@@ -24,6 +24,11 @@
                 <asp:BoundField DataField="Role.ID" HeaderText="Role.ID" SortExpression="Role.ID" />
             </Columns>
         </asp:GridView>
+        <p>
+            &nbsp;</p>
+        <p>
+            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Logout" />
+        </p>
     </form>
     </body>
 </html>

@@ -37,9 +37,20 @@ namespace Assignment_2__19_6_2019_
                     SqlDataReader sdr = cmd.ExecuteReader();
                     if (sdr.Read())
                     {
-                        Session["log"] = 1;
+                        if (uid == "admin")
+                        {
+                            Session["log"] = 1;
+                            Session["na"] = uid;
 
-                        Response.Redirect("AuthHome.aspx");
+                            Response.Redirect("AuthHome.aspx");
+                        }
+                        else
+                        {
+                            Session["log"] = 1;
+                            Session["nu"] = uid;
+                            Response.Redirect("GenHome.aspx");
+
+                        }
                     }
                     else
                     {
@@ -49,6 +60,7 @@ namespace Assignment_2__19_6_2019_
                             var a = (int)ViewState["Attempt"] + 1;
                             var b = 3-(int)ViewState["Attempt"] ;
                             Label3.Text = "Try again...You have " +""+b+""+ " attempts remaining";
+                            Label5.Text = "If you have not registered user, please register now..!!";
                             ViewState["Attempt"] = a;
                         }
                         else
@@ -66,7 +78,10 @@ namespace Assignment_2__19_6_2019_
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-                Response.Redirect("Register.aspx");
+            string uid = TextBox1.Text;
+            string pass = TextBox2.Text;
+            Session["nu"] = uid +","+ pass;
+            Response.Redirect("Register.aspx");
         }
     }
 }
